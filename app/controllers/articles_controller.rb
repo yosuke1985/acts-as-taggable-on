@@ -4,7 +4,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    #条件式？　真のとき：　偽のとき
+    @articles = params[:tag].present? ? Article.tagged_with(params[:tag]) :Article.all
+    @articles = @articles.includes(:tags)
   end
 
   # GET /articles/1
