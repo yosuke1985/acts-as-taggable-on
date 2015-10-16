@@ -3,4 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'ready page:load', ->
-  $('#article-tags').tagit()
+  $('#article-tags').tagit
+    fieldName: 'article[tag_list]'
+    singleField: true

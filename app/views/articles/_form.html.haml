@@ -7,11 +7,11 @@
       %ul
         - @article.errors.full_messages.each do |message|
           %li= message
-  .fireld
+  .field
+    = f.label :tags
     %ul#article-tags
   .field
     = f.label :title
-    %br/
     = f.text_field :title
   .field
     = f.label :body
